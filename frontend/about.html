@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RIMAN Shop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-store"></i> RIMAN Shop
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-info-circle"></i> About RIMAN Shop</h1>
+            <p>Your trusted partner for premium products</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-text">
+                    <h2><i class="fas fa-store"></i> Our Story</h2>
+                    <p>Welcome to RIMAN Shop, LZ's premier destination for high-quality products. Founded with a passion for excellence and customer satisfaction, we've grown from a small startup to a trusted name in the industry.</p>
+                    <p>Our mission is simple: to provide exceptional products backed by outstanding service. Every item in our collection is carefully selected to ensure it meets our high standards of quality and value.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about-store.svg" alt="Our Store">
+                </div>
+            </div>
+
+            <div class="about-section reverse">
+                <div class="about-text">
+                    <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                    <p>At RIMAN Shop, we believe shopping should be simple, secure, and satisfying. We're committed to:</p>
+                    <ul class="mission-list">
+                        <li><i class="fas fa-check-circle"></i> Providing top-quality products at competitive prices</li>
+                        <li><i class="fas fa-check-circle"></i> Ensuring fast and reliable delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Offering excellent customer support via multiple channels</li>
+                        <li><i class="fas fa-check-circle"></i> Making shopping accessible through SMS ordering</li>
+                        <li><i class="fas fa-check-circle"></i> Building long-term relationships with our customers</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about-mission.svg" alt="Our Mission">
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="values-section">
+                <h2><i class="fas fa-heart"></i> Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Integrity</h3>
+                        <p>We conduct business with honesty and transparency</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Customer First</h3>
+                        <p>Your satisfaction is our top priority</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Innovation</h3>
+                        <p>Constantly improving our services and products</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality</h3>
+                        <p>Never compromising on product excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMS Call to Action -->
+    <section class="sms-section">
+        <div class="container">
+            <div class="sms-card">
+                <h3><i class="fas fa-mobile-alt"></i> Need Help? Text Us!</h3>
+                <p>Prefer texting? We're just a message away</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-sms"></i>
+                        <p><strong>SMS Orders:</strong> +1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong> support@rimanshop.com</p>
+                    </div>
+                </div>
+                <button onclick="sendSMS()" class="btn btn-primary">
+                    <i class="fas fa-comment"></i> Send Message
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> RIMAN Shop</h3>
+                    <p>Quality products since 2024</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business St, City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@rimanshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RIMAN Shop - LZ's Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>RIMAN Shop</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+        </ul>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

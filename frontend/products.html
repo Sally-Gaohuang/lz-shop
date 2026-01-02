@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - RIMAN Shop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js"></script>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-store"></i> RIMAN Shop
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-boxes"></i> Our Products</h1>
+            <p>Browse our premium collection of RIMAN products</p>
+        </div>
+    </section>
+
+    <!-- Products Filter -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search products...">
+                </div>
+                <div class="filter-options">
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Living</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="default">Sort By</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="products-container">
+                <!-- Products loaded dynamically -->
+            </div>
+            <div id="no-products" style="display: none; text-align: center; padding: 3rem;">
+                <i class="fas fa-search fa-3x" style="color: #ccc; margin-bottom: 1rem;"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Order Banner -->
+    <section class="quick-order-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h3><i class="fas fa-bolt"></i> Need it fast?</h3>
+                <p>Text your order to <strong>+1 (555) 123-4567</strong> for immediate processing</p>
+                <button onclick="sendSMS()" class="btn btn-warning">
+                    <i class="fas fa-mobile-alt"></i> Order via SMS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> RIMAN Shop</h3>
+                    <p>Premium products, exceptional service.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business St, City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@rimanshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RIMAN Shop - LZ's Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>RIMAN Shop</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+        </ul>
+    </div>
+
+    <script src="assets/js/products.js"></script>
+</body>
+</html>

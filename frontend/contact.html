@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - RIMAN Shop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-store"></i> RIMAN Shop
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-phone"></i> Contact Us</h1>
+            <p>We're here to help! Get in touch with us</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="methods-grid">
+                <!-- SMS Contact -->
+                <div class="method-card sms-card">
+                    <div class="method-icon">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h3>SMS Ordering</h3>
+                    <p class="method-number">+1 (555) 123-4567</p>
+                    <p>Fastest way to place orders</p>
+                    <div class="sms-instructions">
+                        <p><strong>Format:</strong></p>
+                        <code>ORDER [Product] [Qty] [Your Name]</code>
+                    </div>
+                    <button onclick="sendSMS()" class="btn btn-success">
+                        <i class="fas fa-paper-plane"></i> Send SMS
+                    </button>
+                </div>
+
+                <!-- Phone Contact -->
+                <div class="method-card phone-card">
+                    <div class="method-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p class="method-number">+1 (555) 987-6543</p>
+                    <p>Mon-Fri: 9AM-6PM EST</p>
+                    <p>Sat-Sun: 10AM-4PM EST</p>
+                    <button onclick="callUs()" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
+                </div>
+
+                <!-- Email Contact -->
+                <div class="method-card email-card">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p class="method-number">support@rimanshop.com</p>
+                    <p>For inquiries and support</p>
+                    <button onclick="emailUs()" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Send Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2><i class="fas fa-comment-dots"></i> Send us a Message</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Status</option>
+                            <option value="product">Product Question</option>
+                            <option value="support">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Info -->
+    <section class="store-info">
+        <div class="container">
+            <div class="info-card">
+                <h2><i class="fas fa-store-alt"></i> Store Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Visit Our Store</h3>
+                            <p>123 Business Street</p>
+                            <p>Suite 100, City, State 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h3>Support Hours</h3>
+                            <p>24/7 SMS Support Available</p>
+                            <p>Phone Support: 9AM-6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> RIMAN Shop</h3>
+                    <p>Always here to help</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency Contact</h3>
+                    <p><i class="fas fa-phone"></i> 24/7 SMS: +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> urgent@rimanshop.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RIMAN Shop - LZ's Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3>RIMAN Shop</h3>
+            <button class="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+        </ul>
+    </div>
+
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>
