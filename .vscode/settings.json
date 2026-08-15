@@ -1,4 +1,15 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": []
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "files.exclude": {
+    "**/.sites-runtime": true,
+    "**/.wrangler": true,
+    "**/dist": true,
+    "**/node_modules": true
+  }
 }
