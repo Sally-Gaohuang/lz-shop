@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 async function sourceBundle() {
@@ -30,13 +30,30 @@ test("keeps official purchasing and the approved contact email", async () => {
   assert.match(source, /mall\.riman\.com\/GAOLINZHI\/home/);
   assert.match(source, /linzhiatwork@gmail\.com/);
   assert.match(source, /官方 RIMAN 商城/);
+  assert.match(source, /className="header-cta"\s+href="#inquiry"/);
 });
 
 test("embeds both customer videos in the hero", async () => {
   const source = await sourceBundle();
   assert.match(source, /\/videos\/riman-story-1\.mp4/);
   assert.match(source, /\/videos\/riman-story-2\.mp4/);
+  assert.match(source, /\/contact\/amanda-wechat\.jpg/);
+  assert.match(source, /\/contact\/amanda-whatsapp\.png/);
   assert.doesNotMatch(source, /heroPanelTitle/);
+});
+
+test("ships non-empty video and contact media", async () => {
+  const media = [
+    ["../public/videos/riman-story-1.mp4", 100_000],
+    ["../public/videos/riman-story-2.mp4", 100_000],
+    ["../public/contact/amanda-wechat.jpg", 10_000],
+    ["../public/contact/amanda-whatsapp.png", 10_000],
+  ];
+
+  for (const [path, minimumSize] of media) {
+    const file = await stat(new URL(path, import.meta.url));
+    assert.ok(file.size >= minimumSize, `${path} is missing or unexpectedly small`);
+  }
 });
 
 test("does not publish personal payment, phone or old-brand details", async () => {
