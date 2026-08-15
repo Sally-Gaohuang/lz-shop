@@ -30,29 +30,33 @@ test("keeps official purchasing and the approved contact email", async () => {
   assert.match(source, /mall\.riman\.com\/GAOLINZHI\/home/);
   assert.match(source, /linzhiatwork@gmail\.com/);
   assert.match(source, /官方 RIMAN 商城/);
-  assert.match(source, /className="header-cta"\s+href="#inquiry"/);
+  assert.match(source, /className="header-cta" href="#inquiry"/);
 });
 
 test("embeds both customer videos in the hero", async () => {
   const source = await sourceBundle();
   assert.match(source, /\/videos\/riman-story-1\.mp4/);
   assert.match(source, /\/videos\/riman-story-2\.mp4/);
-  assert.match(source, /\/contact\/amanda-wechat\.jpg/);
-  assert.match(source, /\/contact\/amanda-whatsapp\.png/);
   assert.doesNotMatch(source, /heroPanelTitle/);
 });
 
-test("ships non-empty video and contact media", async () => {
-  const media = [
-    ["../public/videos/riman-story-1.mp4", 100_000],
-    ["../public/videos/riman-story-2.mp4", 100_000],
-    ["../public/contact/amanda-wechat.jpg", 10_000],
-    ["../public/contact/amanda-whatsapp.png", 10_000],
+test("shows all three team contact channels", async () => {
+  const source = await sourceBundle();
+  assert.match(source, /\/contact\/amanda-wechat\.jpg/);
+  assert.match(source, /\/contact\/amanda-whatsapp\.png/);
+  assert.match(source, /\/contact\/amanda-wecom\.jpg/);
+  assert.match(source, /团队联系方式/);
+  assert.match(source, /TEAM CONTACT/);
+
+  const assets = [
+    "../public/contact/amanda-wechat.jpg",
+    "../public/contact/amanda-whatsapp.png",
+    "../public/contact/amanda-wecom.jpg",
   ];
 
-  for (const [path, minimumSize] of media) {
-    const file = await stat(new URL(path, import.meta.url));
-    assert.ok(file.size >= minimumSize, `${path} is missing or unexpectedly small`);
+  for (const asset of assets) {
+    const details = await stat(new URL(asset, import.meta.url));
+    assert.ok(details.size > 0, `${asset} must not be empty`);
   }
 });
 

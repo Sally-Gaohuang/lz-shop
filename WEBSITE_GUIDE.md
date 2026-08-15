@@ -1,4 +1,5 @@
 力曼小姐 · Ms Riman 网站运营指南
+https://sally-riman-sg.sallymelissa.chatgpt.site/
 
 网站用途
 
